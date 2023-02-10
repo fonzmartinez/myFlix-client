@@ -27289,46 +27289,26 @@ var _movieView = require("../movie-view/movie-view");
 var _s = $RefreshSig$();
 const MainView = ()=>{
     _s();
-    const [movies, setMovies] = (0, _react.useState)([
-        {
-            id: 1,
-            title: "The Breakfast Club",
-            image: "https://www.nicepng.com/png/detail/653-6539105_image-result-for-the-breakfast-club-from-the.png",
-            description: "Five high school students meet in Satudrday detention and discover how they have a lot more in common than they thought.",
-            genre: "Comedy",
-            director: "John Hughes"
-        },
-        {
-            id: 2,
-            title: "Valley Girl",
-            image: "https://images.fanart.tv/fanart/valley-girl-5b66e3bf2a4fb.png",
-            description: "Julie, a girl from the valley, meets Randy, a punk from the city. They are from different worlds and find love. Somehow they need to stay together in spite of her trendy, shallow friends.",
-            genre: "Comedy",
-            director: "Martha Coolidge"
-        },
-        {
-            id: 3,
-            title: "Pretty In Pink",
-            image: "https://images.fanart.tv/fanart/pretty-in-pink-541051259acfc.png",
-            description: "A poor girl must choose between the affections of dating her childhood sweetheart or a rich but sensitive playboy.",
-            genre: "Drama",
-            director: "Howard Deutch"
-        }
-    ]);
+    const [movies, setMovies] = (0, _react.useState)([]);
+    (0, _react.useEffect)(()=>{
+        fetch("https://enigmatic-eyrie-99477.herokuapp.com/movies").then((response)=>response.json()).then((data)=>{
+            console.log("movies from api:", data);
+        });
+    }, []);
     const [selectedMovie, setSelectedMovie] = (0, _react.useState)(null);
     if (selectedMovie) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieView.MovieView), {
         movie: selectedMovie,
         onBackClick: ()=>setSelectedMovie(null)
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 37,
+        lineNumber: 20,
         columnNumber: 7
     }, undefined);
     if (movies.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: "The list is empty!"
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 43,
+        lineNumber: 26,
         columnNumber: 12
     }, undefined);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27339,16 +27319,16 @@ const MainView = ()=>{
                 }
             }, movie.id, false, {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 49,
+                lineNumber: 32,
                 columnNumber: 9
             }, undefined))
     }, void 0, false, {
         fileName: "src/components/main-view/main-view.jsx",
-        lineNumber: 47,
+        lineNumber: 30,
         columnNumber: 5
     }, undefined);
 };
-_s(MainView, "3kq/bUQcJsM7WbIR+9Spaib9+lQ=");
+_s(MainView, "llzgrUkvR/+OoCNfiqlA1H2LLFI=");
 _c = MainView;
 var _c;
 $RefreshReg$(_c, "MainView");
