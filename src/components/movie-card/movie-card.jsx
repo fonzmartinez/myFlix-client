@@ -1,3 +1,4 @@
+
 export const MovieCard = ({ movie, onMovieClick }) => {
   return (
     <div

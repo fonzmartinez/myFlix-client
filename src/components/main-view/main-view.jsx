@@ -5,6 +5,8 @@ import { MovieView } from "../movie-view/movie-view";
 export const MainView = () => {
   const [movies, setMovies] = useState([]);
 
+  const [selectedMovie, setSelectedMovie] = useState(null);
+
   useEffect(() => {
     fetch("https://enigmatic-eyrie-99477.herokuapp.com/movies")
       .then((response) => response.json())
@@ -12,8 +14,6 @@ export const MainView = () => {
         console.log("movies from api:", data);
       });
   }, []);
-
-  const [selectedMovie, setSelectedMovie] = useState(null);
 
   if (selectedMovie) {
     return (
