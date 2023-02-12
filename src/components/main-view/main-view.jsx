@@ -11,7 +11,14 @@ export const MainView = () => {
     fetch("https://enigmatic-eyrie-99477.herokuapp.com/movies")
       .then((response) => response.json())
       .then((data) => {
-        console.log("movies from api:", data);
+        const moviesFromApi = data.map((movie) => {
+          return {
+            title: movie.title,
+            director: movie.director
+          };
+        });
+
+        setMovies(moviesFromApi);
       });
   }, []);
 
