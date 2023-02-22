@@ -6,6 +6,8 @@ import { SignupView } from "../signup-view/signup-view";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
+import "./main-view.scss";
+
 
 export const MainView = () => {
   const storedUser = JSON.parse(localStorage.getItem("user"));
@@ -56,15 +58,17 @@ export const MainView = () => {
 
       ) : selectedMovie ? (
         <>
-          <button
-            onClick={() => {
-              setUser(null);
-              setToken(null);
-              localStorage.clear();
-            }}
-          >
-            Logout
-          </button>
+          <Col md={8}>
+            <button
+              onClick={() => {
+                setUser(null);
+                setToken(null);
+                localStorage.clear();
+              }}
+            >
+              Logout
+            </button>
+          </Col>
           <Col md={8}>
             <MovieView
               movie={selectedMovie}
@@ -89,15 +93,19 @@ export const MainView = () => {
 
       ) : (
         <>
-          <button
-            onClick={() => {
-              setUser(null);
-              setToken(null);
-              localStorage.clear();
-            }}
-          >
-            Logout
-          </button>
+          <Row>
+            <Col md={8}>
+              <button
+                onClick={() => {
+                  setUser(null);
+                  setToken(null);
+                  localStorage.clear();
+                }}
+              >
+                Logout
+              </button>
+            </Col>
+          </Row>
           {movies.map((movie) => (
             <Col className="mb-5" key={movie.id} md={3}>
               <MovieCard
