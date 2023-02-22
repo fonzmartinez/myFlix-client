@@ -11,13 +11,13 @@ export const LoginView = ({ onLoggedIn }) => {
 
     const data = {
       Username: username,
-      Password: password,
+      Password: password
     };
 
     fetch("https://enigmatic-eyrie-99477.herokuapp.com/login", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(data)
     })
@@ -65,3 +65,4 @@ export const LoginView = ({ onLoggedIn }) => {
     </Form>
   );
 };
+
