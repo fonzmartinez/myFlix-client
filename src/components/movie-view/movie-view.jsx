@@ -2,10 +2,13 @@ import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import "./movie-view.scss";
 
-export const MovieView = ({ movies }) => {
-  const { movieId } = useParams();
 
-  const movie = movies.find((m) => m.id === movieId);
+export const MovieView = ({ movies }) => {
+  const { movieID } = useParams();
+
+  const movie = movies.find((m) => m.id === movieID);
+  debugger;
+
 
   return (
     <div>
@@ -31,7 +34,8 @@ export const MovieView = ({ movies }) => {
       <Link to={`/`}>
         <button
           className="back-button"
-          style={{ cursor: "pointer" }}>
+          style={{ cursor: "pointer" }}
+        >
           Back
         </button>
       </Link>
@@ -39,4 +43,3 @@ export const MovieView = ({ movies }) => {
   );
 };
 
-debugger;
