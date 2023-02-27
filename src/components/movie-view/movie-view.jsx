@@ -4,10 +4,10 @@ import "./movie-view.scss";
 
 
 export const MovieView = ({ movies }) => {
-  const { movieID } = useParams();
+  const { movieId } = useParams();
 
-  const movie = movies.find((m) => m.id === movieID);
-  debugger;
+  const movie = movies.find((m) => m.id === movieId);
+
 
 
   return (

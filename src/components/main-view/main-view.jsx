@@ -32,6 +32,7 @@ export const MainView = () => {
       .then((data) => {
         const moviesFromApi = data.map((movie) => {
           return {
+            id: movie._id,
             title: movie.Title,
             description: movie.Description,
             genre: movie.Genre.Name,
@@ -87,7 +88,7 @@ export const MainView = () => {
           />
 
           <Route
-            path="/movies/:MovieID"
+            path="/movies/:movieId"
             element={
               <>
                 {!user ? (
