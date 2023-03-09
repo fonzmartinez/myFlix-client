@@ -1,17 +1,16 @@
 import { useState } from "react";
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
-
+import { Button, Form } from "react-bootstrap";
 
 export const LoginView = ({ onLoggedIn }) => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
     const data = {
       Username: username,
-      Password: password
+      Password: password,
     };
 
     fetch("https://enigmatic-eyrie-99477.herokuapp.com/login", {
@@ -19,7 +18,7 @@ export const LoginView = ({ onLoggedIn }) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(data)
+      body: JSON.stringify(data),
     })
       .then((response) => response.json())
       .then((data) => {
@@ -59,6 +58,7 @@ export const LoginView = ({ onLoggedIn }) => {
           required
         />
       </Form.Group>
+
       <Button variant="primary" type="submit">
         Submit
       </Button>

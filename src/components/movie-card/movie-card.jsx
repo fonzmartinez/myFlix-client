@@ -1,23 +1,45 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Button, Card } from "react-bootstrap";
+import { FavButton } from "../fav-button/fav-button";
+
+import { Button, Card, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-export const MovieCard = ({ movie }) => {
+import "./movie-card.scss";
+
+export const MovieCard = ({ movie, user, updateUserOnFav }) => {
   return (
 
     <Card className="h-100">
-      <Card.Img variant="top" src={movie.image} />
-      <Card.Body>
-        <Card.Title>{movie.title}</Card.Title>
-        <Card.Text>{movie.director}</Card.Text>
-        <Link to={`/movies/${encodeURIComponent(movie.id)}`}>
-          <Button variant="link">Open</Button>
-        </Link>
+      <Row className="h-50">
+        <Col className="h-100 text-center mt-3">
+          <img variant="top" src={movie.image} />
+        </Col>
+      </Row>
+      <Card.Body className="d-flex flex-column">
+        <Card.Title className="mt-2">{movie.title}</Card.Title>
+        <Card.Text className="mt-3">{movie.description}</Card.Text>
+        <Row className="mt-auto">
+          <Col className="text-start">
+            <FavButton
+              user={user}
+              movie={movie}
+              updateUserOnFav={updateUserOnFav}
+            />
+          </Col>
+          <Col className="text-end">
+            <Link to={`/movies/${encodeURIComponent(movie.id)}`}>
+              <Button variant="secondary" size="sm" className="mt-auto">
+                Details
+              </Button>
+            </Link>
+          </Col>
+        </Row>
       </Card.Body>
     </Card>
   );
 };
+
 
 MovieCard.propTypes = {
   movie: PropTypes.shape({
@@ -26,6 +48,6 @@ MovieCard.propTypes = {
     genre: PropTypes.string.isRequired,
     director: PropTypes.string.isRequired,
     image: PropTypes.string
-  }).isRequired
+  }).isRequired,
+  onMovieClick: PropTypes.func.isRequired
 };
-

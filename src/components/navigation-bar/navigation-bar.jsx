@@ -5,7 +5,7 @@ export const NavigationBar = ({ user, onLoggedOut }) => {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand as={Link} to="/">
+        <Navbar.Brand as={Link} to='/'>
           Movies App
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -26,7 +26,7 @@ export const NavigationBar = ({ user, onLoggedOut }) => {
                 <Nav.Link as={Link} to="/">
                   Home
                 </Nav.Link>
-                <Nav.Link as={Link} to="/profile">
+                <Nav.Link as={Link} to={`/users/${user.Username}`}>
                   Profile
                 </Nav.Link>
                 <Nav.Link onClick={onLoggedOut}>Logout</Nav.Link>
@@ -38,6 +38,3 @@ export const NavigationBar = ({ user, onLoggedOut }) => {
     </Navbar>
   );
 };
-
-
-
