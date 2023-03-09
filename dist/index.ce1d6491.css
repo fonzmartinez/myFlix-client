@@ -12039,7 +12039,16 @@ img {
   padding: 10px;
 }
 
-.back-button, .favorite-movies-button {
+.back-button {
+  color: #f5f5f5;
+  background-color: #ff48c4;
+  border: none;
+  border-radius: 4px;
+  margin-top: 10px;
+  padding: 4px 12px;
+}
+
+.favorite-movies-button {
   color: #f5f5f5;
   background-color: #ff3f3f;
   border: none;

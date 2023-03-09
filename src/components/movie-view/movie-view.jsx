@@ -30,12 +30,12 @@ export const MovieView = ({ movies, user, updateUserOnFav }) => {
 
       <div>
         <span>Genre: </span>
-        <span>{movie.genre.name}</span>
+        <span>{movie.genre}</span>
       </div>
 
       <div>
         <span>Director: </span>
-        <span>{movie.director.name}</span>
+        <span>{movie.director}</span>
       </div>
 
       <div>
