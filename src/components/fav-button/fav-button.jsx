@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import React from "react";
 import { Button } from "react-bootstrap";
 
+import "./fav-button.scss";
 
 export const FavButton = ({ user, movie, updateUserOnFav }) => {
   const token = localStorage.getItem("token");
@@ -43,7 +44,7 @@ export const FavButton = ({ user, movie, updateUserOnFav }) => {
 
   return (
     <Link onClick={() => toggleFavorite()}>
-      <Button variant="secondary" size="sm" className="mt-auto"> Add/Remove Favorites</Button>
+      <Button variant="secondary" size="sm" className="button"> Add/Remove Favorites</Button>
     </Link>
   );
 };

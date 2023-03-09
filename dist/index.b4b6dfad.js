@@ -27596,8 +27596,8 @@ const MovieCard = ({ movie , user , updateUserOnFav  })=>{
                                     to: `/movies/${encodeURIComponent(movie.id)}`,
                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
                                         variant: "secondary",
-                                        size: "sm",
-                                        className: "mt-auto",
+                                        size: "lg",
+                                        className: "button-details",
                                         children: "Details"
                                     }, void 0, false, {
                                         fileName: "src/components/movie-card/movie-card.jsx",
@@ -46248,6 +46248,7 @@ var _reactRouterDom = require("react-router-dom");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactBootstrap = require("react-bootstrap");
+var _favButtonScss = require("./fav-button.scss");
 const FavButton = ({ user , movie , updateUserOnFav  })=>{
     const token = localStorage.getItem("token");
     const alreadyFavorite = user.FavoriteMovies.find((favMovieId)=>favMovieId === movie.id);
@@ -46278,16 +46279,16 @@ const FavButton = ({ user , movie , updateUserOnFav  })=>{
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Button), {
             variant: "secondary",
             size: "sm",
-            className: "mt-auto",
+            className: "button",
             children: " Add/Remove Favorites"
         }, void 0, false, {
             fileName: "src/components/fav-button/fav-button.jsx",
-            lineNumber: 46,
+            lineNumber: 47,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/components/fav-button/fav-button.jsx",
-        lineNumber: 45,
+        lineNumber: 46,
         columnNumber: 5
     }, undefined);
 };
@@ -46300,7 +46301,7 @@ $RefreshReg$(_c, "FavButton");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","react":"21dqq","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"iseXP","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"jcAIC"}],"ggaUx":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","react":"21dqq","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"iseXP","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"jcAIC","./fav-button.scss":"gK9mO"}],"gK9mO":[function() {},{}],"ggaUx":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$e9f6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

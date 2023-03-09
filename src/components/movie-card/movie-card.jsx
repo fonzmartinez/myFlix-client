@@ -29,7 +29,7 @@ export const MovieCard = ({ movie, user, updateUserOnFav }) => {
           </Col>
           <Col className="text-end">
             <Link to={`/movies/${encodeURIComponent(movie.id)}`}>
-              <Button variant="secondary" size="sm" className="mt-auto">
+              <Button variant="secondary" size="lg" className="button-details">
                 Details
               </Button>
             </Link>
