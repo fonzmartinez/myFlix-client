@@ -1,7 +1,10 @@
 import React from "react";
 
+import { useSelector } from "react-redux";
 
-export const UserInfo = ({ user }) => {
+
+export const UserInfo = () => {
+  const user = useSelector((state) => state.user.user);
 
   return (
     <div>
@@ -11,4 +14,3 @@ export const UserInfo = ({ user }) => {
     </div>
   );
 };
-

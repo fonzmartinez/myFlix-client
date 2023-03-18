@@ -1,16 +1,17 @@
-import React from "react";
 import { useParams } from "react-router";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import React from "react";
 import { Button } from "react-bootstrap";
 import { FavButton } from "../fav-button/fav-button";
 
 import "./movie-view.scss";
 
+export const MovieView = () => {
+  const movies = useSelector((state) => state.movies.movies);
 
-export const MovieView = ({ movies, user, updateUserOnFav }) => {
   const { movieId } = useParams();
   const movie = movies.find((m) => m.id === movieId);
-
 
   return (
     <>
@@ -40,9 +41,7 @@ export const MovieView = ({ movies, user, updateUserOnFav }) => {
 
       <div>
         <FavButton
-          user={user}
           movie={movie}
-          updateUserOnFav={updateUserOnFav}
         />
       </div>
 
@@ -58,4 +57,3 @@ export const MovieView = ({ movies, user, updateUserOnFav }) => {
     </>
   );
 };
-

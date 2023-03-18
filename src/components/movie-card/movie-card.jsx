@@ -7,25 +7,21 @@ import { Link } from "react-router-dom";
 
 import "./movie-card.scss";
 
-export const MovieCard = ({ movie, user, updateUserOnFav }) => {
+export const MovieCard = ({ movie }) => {
   return (
-
     <Card className="h-100">
       <Row className="h-50">
         <Col className="h-100 text-center mt-3">
           <img variant="top" src={movie.image} />
         </Col>
       </Row>
+
       <Card.Body className="d-flex flex-column">
         <Card.Title className="mt-2">{movie.title}</Card.Title>
         <Card.Text className="mt-3">{movie.description}</Card.Text>
         <Row className="mt-auto">
           <Col className="text-start">
-            <FavButton
-              user={user}
-              movie={movie}
-              updateUserOnFav={updateUserOnFav}
-            />
+            <FavButton movie={movie} />
           </Col>
           <Col className="text-end">
             <Link to={`/movies/${encodeURIComponent(movie.id)}`}>

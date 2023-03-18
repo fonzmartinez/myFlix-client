@@ -1,12 +1,18 @@
-import React, { useState } from "react";
-import { Button, Form, Row, Col } from "react-bootstrap";
+import React, { useState } from 'react';
+import { Button, Form, Row, Col, CardGroup, Card } from 'react-bootstrap';
 
-export const UserUpdate = ({ storedToken, storedUser }) => {
-  const [token, setToken] = useState(storedToken ? storedToken : null);
-  const [user, setUser] = useState(storedUser ? storedUser : null);
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { setUser } from "../../redux/reducers/user";
+
+export const UserUpdate = () => {
+  const token = localStorage.getItem("token");
+  const user = useSelector((state) => state.user.user);
+
+  const dispatch = useDispatch();
 
   const [username, setUsername] = useState(user.Username);
-  const [password, setPassword] = useState();
+  const [password, setPassword] = useState('');
   const [email, setEmail] = useState(user.Email);
   const [birthday, setBirthday] = useState(user.Birthday);
 
@@ -17,7 +23,7 @@ export const UserUpdate = ({ storedToken, storedUser }) => {
       .then((response) => response.json())
       .then((updatedUser) => {
         if (updatedUser) {
-          setUser(updatedUser);
+          dispatch(setUser(updatedUser));
           localStorage.setItem("user", JSON.stringify(updatedUser));
           window.location.reload();
         }
@@ -36,8 +42,7 @@ export const UserUpdate = ({ storedToken, storedUser }) => {
       Birthday: birthday,
     };
 
-    fetch(
-      `https://enigmatic-eyrie-99477.herokuapp.com/users/${storedUser.Username}`,
+    fetch(`https://enigmatic-eyrie-99477.herokuapp.com/users/${user.Username}`,
       {
         method: "PUT",
         body: JSON.stringify(data),
@@ -112,4 +117,3 @@ export const UserUpdate = ({ storedToken, storedUser }) => {
     </>
   );
 };
-

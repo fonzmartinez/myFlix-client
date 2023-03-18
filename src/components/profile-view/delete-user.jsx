@@ -1,18 +1,21 @@
 import { Button, Col, Row } from "react-bootstrap";
+import { useSelector } from "react-redux";
 
-export const DeleteUser = ({ storedToken, storedUser }) => {
+export const DeleteUser = (storedUser) => {
+  const user = useSelector((state) => state.user.user);
+  const token = localStorage.getItem("token");
   const handleDeregister = () => {
     const userWarning = confirm("Are you sure?");
 
     userWarning === false
       ? alert("Back to Movies App")
       : fetch(
-        `https://enigmatic-eyrie-99477.herokuapp.com/users/${storedUser.Username}`,
+        `https://enigmatic-eyrie-99477.herokuapp.com/users/${user.Username}`,
         {
           method: "DELETE",
           headers: {
-            Authorization: `Bearer ${storedToken}`,
-            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
           },
         }
       )

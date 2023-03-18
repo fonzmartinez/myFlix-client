@@ -1,16 +1,15 @@
 import React from "react";
 
+import { useSelector } from "react-redux";
+
 import { UserUpdate } from "./user-update";
 import { UserInfo } from "./user-info";
 import { UserFavorites } from "./user-favorites";
 import { DeleteUser } from "./delete-user";
 import { Container, Row, Col, Card } from "react-bootstrap";
 
-export const ProfileView = ({ movies }) => {
-
-  const storedUser = JSON.parse(localStorage.getItem("user"));
-  const storedToken = localStorage.getItem("token");
-  const storedMovies = JSON.parse(localStorage.getItem("movies"));
+export const ProfileView = () => {
+  const movies = useSelector((state) => state.movies.movies);
 
   return (
     <Container>
@@ -18,7 +17,7 @@ export const ProfileView = ({ movies }) => {
         <Col>
           <Card>
             <Card.Body>
-              <UserInfo user={storedUser} />
+              <UserInfo />
             </Card.Body>
           </Card>
         </Col>
@@ -26,16 +25,17 @@ export const ProfileView = ({ movies }) => {
         <Col >
           <Card>
             <Card.Body>
-              <UserUpdate storedToken={storedToken} storedUser={storedUser} />
-              <DeleteUser storedToken={storedToken} storedUser={storedUser} />
+              <UserUpdate />
+              <DeleteUser />
             </Card.Body>
           </Card>
         </Col>
       </Row>
 
       <Row>
-        <UserFavorites movies={movies} storedUser={storedUser} />
+        <UserFavorites movies={movies} />
       </Row>
     </Container>
   );
 };
+
