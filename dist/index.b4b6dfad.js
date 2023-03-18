@@ -52216,15 +52216,15 @@ const NavigationBar = ()=>{
                                         columnNumber: 17
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
-                                        md: 4,
+                                        md: 8,
                                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _moviesFilter.MoviesFilter), {}, void 0, false, {
                                             fileName: "src/components/navigation-bar/navigation-bar.jsx",
-                                            lineNumber: 49,
+                                            lineNumber: 50,
                                             columnNumber: 19
                                         }, undefined)
                                     }, void 0, false, {
                                         fileName: "src/components/navigation-bar/navigation-bar.jsx",
-                                        lineNumber: 48,
+                                        lineNumber: 49,
                                         columnNumber: 17
                                     }, undefined)
                                 ]
@@ -52291,7 +52291,7 @@ const MoviesFilter = ()=>{
     const dispatch = (0, _reactRedux.useDispatch)();
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
         type: "text",
-        placeholder: "Search...",
+        placeholder: "Search Movies...",
         value: filter,
         onChange: (e)=>dispatch((0, _movies.setFilter)(e.target.value))
     }, void 0, false, {
