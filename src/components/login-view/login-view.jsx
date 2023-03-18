@@ -1,9 +1,15 @@
 import { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 
-export const LoginView = ({ onLoggedIn }) => {
+import { useDispatch } from "react-redux";
+import { setUser } from "../../redux/reducers/user";
+import { setToken } from "../../redux/reducers/token";
+
+export const LoginView = () => {
+
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const dispatch = useDispatch();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -14,19 +20,19 @@ export const LoginView = ({ onLoggedIn }) => {
     };
 
     fetch("https://enigmatic-eyrie-99477.herokuapp.com/login", {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("Login response: ", data);
         if (data.user) {
           localStorage.setItem("user", JSON.stringify(data.user));
           localStorage.setItem("token", data.token);
-          onLoggedIn(data.user, data.token);
+          dispatch(setUser(data.user));
+          dispatch(setToken(data.token));
         } else {
           alert("No such user");
         }
@@ -58,11 +64,9 @@ export const LoginView = ({ onLoggedIn }) => {
           required
         />
       </Form.Group>
-
       <Button variant="primary" type="submit">
         Submit
       </Button>
     </Form>
   );
 };
-

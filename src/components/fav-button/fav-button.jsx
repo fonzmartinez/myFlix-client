@@ -2,10 +2,17 @@ import { Link } from "react-router-dom";
 import React from "react";
 import { Button } from "react-bootstrap";
 
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { setUser } from "../../redux/reducers/user";
+
 import "./fav-button.scss";
 
-export const FavButton = ({ user, movie, updateUserOnFav }) => {
+export const FavButton = ({ movie }) => {
+  const user = useSelector((state) => state.user.user);
   const token = localStorage.getItem("token");
+
+  const dispatch = useDispatch();
 
   const alreadyFavorite = user.FavoriteMovies.find(
     (favMovieId) => favMovieId === movie.id
@@ -38,7 +45,7 @@ export const FavButton = ({ user, movie, updateUserOnFav }) => {
       .then((response) => response.json())
       .then((data) => {
         alert(`${resultAlert}`);
-        updateUserOnFav(data);
+        dispatch(setUser(data));
       })
   };
 

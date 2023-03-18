@@ -1,29 +1,55 @@
-import { useState, useEffect } from "react";
-import { MovieCard } from "../movie-card/movie-card";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+
+import { setMovies } from "../../redux/reducers/movies";
+import { setUser } from "../../redux/reducers/user";
+
 import { MovieView } from "../movie-view/movie-view";
+
 import { LoginView } from "../login-view/login-view";
 import { SignupView } from "../signup-view/signup-view";
 import { NavigationBar } from "../navigation-bar/navigation-bar";
 
-import { Row, Col } from "react-bootstrap";
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ProfileView } from "../profile-view/profile-view";
+import { MoviesList } from "../movies-list/movies-list";
 
 import "./main-view.scss";
 
 export const MainView = () => {
-  const storedUser = JSON.parse(localStorage.getItem("user"));
-  const storedToken = localStorage.getItem("token");
-  const [movies, setMovies] = useState([]);
-  const [selectedMovie, setSelectedMovie] = useState(null);
-  const [user, setUser] = useState(storedUser ? storedUser : null);
-  const [token, setToken] = useState(storedToken ? storedToken : null);
+
+  const movies = useSelector((state) => state.movies.movies);
+
+  const user = useSelector((state) => state.user.user);
+  const token = useSelector(
+    (state) => state.token.token || localStorage.getItem("token")
+  );
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (!token) {
       return;
     }
+    getUser();
+    getMovies();
+  }, [token]);
 
+  const getUser = () => {
+    const username = JSON.parse(localStorage.getItem('user')).Username;
+    fetch(`https://enigmatic-eyrie-99477.herokuapp.com/users/${username}`, {
+      headers: { Authorization: `Bearer ${token}` },
+    })
+      .then((response) => response.json())
+      .then((user) => {
+        dispatch(setUser(user));
+      });
+  };
+
+  const getMovies = () => {
     fetch("https://enigmatic-eyrie-99477.herokuapp.com/movies", {
       headers: { Authorization: `Bearer ${token}` },
     })
@@ -39,23 +65,16 @@ export const MainView = () => {
             image: movie.ImagePath,
           };
         });
-
-        setMovies(moviesFromApi);
+        dispatch(setMovies(moviesFromApi));
+      })
+      .catch((error) => {
+        console.log(error);
       });
-  }, [token]);
-
+  };
 
   return (
     <BrowserRouter>
-      <NavigationBar
-        user={user}
-        onLoggedOut={() => {
-          setUser(null);
-          setToken(null);
-          localStorage.clear();
-        }}
-      />
-
+      <NavigationBar />
       <Row className="justify-content-md-center">
         <Routes>
           <Route
@@ -81,12 +100,7 @@ export const MainView = () => {
                   <Navigate to="/" />
                 ) : (
                   <Col md={5}>
-                    <LoginView
-                      onLoggedIn={(user, token) => {
-                        setUser(user);
-                        setToken(token);
-                      }}
-                    />
+                    <LoginView />
                   </Col>
                 )}
               </>
@@ -103,14 +117,7 @@ export const MainView = () => {
                   <Col>The list is empty!</Col>
                 ) : (
                   <Col>
-                    <MovieView
-                      movies={movies}
-                      user={user}
-                      updateUserOnFav={(user) => {
-                        setUser(user);
-                        localStorage.setItem("user", JSON.stringify(user));
-                      }}
-                    />
+                    <MovieView />
                   </Col>
                 )}
               </>
@@ -120,32 +127,7 @@ export const MainView = () => {
           <Route
             path="/"
             element={
-              <>
-                {!user ? (
-                  <Navigate to="/login" replace />
-                ) : movies.length === 0 ? (
-                  <div>The list is empty!</div>
-                ) : (
-                  <>
-                    {movies.map((movie) => (
-                      <Col
-                        className="mb-5" key={movie.id} md={3}>
-                        <MovieCard
-                          movie={movie}
-                          user={user}
-                          updateUserOnFav={(user) => {
-                            setUser(user);
-                            localStorage.setItem(
-                              "user",
-                              JSON.stringify(user)
-                            );
-                          }}
-                        />
-                      </Col>
-                    ))}
-                  </>
-                )}
-              </>
+              <>{!user ? <Navigate to="/login" replace /> : <MoviesList />}</>
             }
           />
 
@@ -159,7 +141,7 @@ export const MainView = () => {
                   <Col>The list is empty!</Col>
                 ) : (
                   <Col>
-                    <ProfileView movies={movies} />
+                    <ProfileView />
                   </Col>
                 )}
               </>
