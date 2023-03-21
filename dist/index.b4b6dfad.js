@@ -27509,11 +27509,7 @@ $RefreshReg$(_c, "MainView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-<<<<<<< HEAD
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movie-view/movie-view":"ggaUx","../login-view/login-view":"9YtA0","../signup-view/signup-view":"4OGiN","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../navigation-bar/navigation-bar":"bsPVM","../profile-view/profile-view":"2vVqf","./main-view.scss":"eBaMl","../movie-card/movie-card":"bwuIu","react-bootstrap":"3AD9A"}],"ggaUx":[function(require,module,exports) {
-=======
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movie-view/movie-view":"ggaUx","../login-view/login-view":"9YtA0","../signup-view/signup-view":"4OGiN","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../navigation-bar/navigation-bar":"bsPVM","../profile-view/profile-view":"2vVqf","./main-view.scss":"eBaMl","react-redux":"bdVon","../../redux/reducers/movies":"l0qwl","../../redux/reducers/user":"e6tdF","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6","../movies-list/movies-list":"bPxKK"}],"ggaUx":[function(require,module,exports) {
->>>>>>> Finalize-Project
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movie-view/movie-view":"ggaUx","../login-view/login-view":"9YtA0","../signup-view/signup-view":"4OGiN","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../navigation-bar/navigation-bar":"bsPVM","../profile-view/profile-view":"2vVqf","./main-view.scss":"eBaMl","react-redux":"bdVon","../../redux/reducers/movies":"l0qwl","../../redux/reducers/user":"e6tdF","../movies-list/movies-list":"bPxKK","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6"}],"ggaUx":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$e9f6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27529,23 +27525,13 @@ var _reactRedux = require("react-redux");
 var _reactRouterDom = require("react-router-dom");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-<<<<<<< HEAD
-var _reactRouter = require("react-router");
-var _reactRouterDom = require("react-router-dom");
-=======
->>>>>>> Finalize-Project
 var _reactBootstrap = require("react-bootstrap");
 var _favButton = require("../fav-button/fav-button");
 var _movieViewScss = require("./movie-view.scss");
 var _s = $RefreshSig$();
-<<<<<<< HEAD
-const MovieView = ({ movies , user , updateUserOnFav  })=>{
-    _s();
-=======
 const MovieView = ()=>{
     _s();
     const movies = (0, _reactRedux.useSelector)((state)=>state.movies.movies);
->>>>>>> Finalize-Project
     const { movieId  } = (0, _reactRouter.useParams)();
     const movie = movies.find((m)=>m.id === movieId);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
@@ -27555,20 +27541,12 @@ const MovieView = ()=>{
                     src: movie.image
                 }, void 0, false, {
                     fileName: "src/components/movie-view/movie-view.jsx",
-<<<<<<< HEAD
-                    lineNumber: 18,
-=======
                     lineNumber: 19,
->>>>>>> Finalize-Project
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/movie-view/movie-view.jsx",
-<<<<<<< HEAD
-                lineNumber: 17,
-=======
                 lineNumber: 18,
->>>>>>> Finalize-Project
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27577,32 +27555,20 @@ const MovieView = ()=>{
                         children: "Title: "
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-<<<<<<< HEAD
-                        lineNumber: 22,
-=======
                         lineNumber: 23,
->>>>>>> Finalize-Project
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: movie.title
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-<<<<<<< HEAD
-                        lineNumber: 23,
-=======
                         lineNumber: 24,
->>>>>>> Finalize-Project
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/movie-view/movie-view.jsx",
-<<<<<<< HEAD
-                lineNumber: 21,
-=======
                 lineNumber: 22,
->>>>>>> Finalize-Project
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27611,32 +27577,20 @@ const MovieView = ()=>{
                         children: "Description: "
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-<<<<<<< HEAD
-                        lineNumber: 27,
-=======
                         lineNumber: 28,
->>>>>>> Finalize-Project
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: movie.description
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-<<<<<<< HEAD
-                        lineNumber: 28,
-=======
                         lineNumber: 29,
->>>>>>> Finalize-Project
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/movie-view/movie-view.jsx",
-<<<<<<< HEAD
-                lineNumber: 26,
-=======
                 lineNumber: 27,
->>>>>>> Finalize-Project
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27645,32 +27599,20 @@ const MovieView = ()=>{
                         children: "Genre: "
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-<<<<<<< HEAD
-                        lineNumber: 32,
-=======
                         lineNumber: 33,
->>>>>>> Finalize-Project
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: movie.genre
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-<<<<<<< HEAD
-                        lineNumber: 33,
-=======
                         lineNumber: 34,
->>>>>>> Finalize-Project
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/movie-view/movie-view.jsx",
-<<<<<<< HEAD
-                lineNumber: 31,
-=======
                 lineNumber: 32,
->>>>>>> Finalize-Project
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27679,58 +27621,33 @@ const MovieView = ()=>{
                         children: "Director: "
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-<<<<<<< HEAD
-                        lineNumber: 37,
-=======
                         lineNumber: 38,
->>>>>>> Finalize-Project
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                         children: movie.director
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-<<<<<<< HEAD
-                        lineNumber: 38,
-=======
                         lineNumber: 39,
->>>>>>> Finalize-Project
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/movie-view/movie-view.jsx",
-<<<<<<< HEAD
-                lineNumber: 36,
-=======
                 lineNumber: 37,
->>>>>>> Finalize-Project
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _favButton.FavButton), {
-<<<<<<< HEAD
-                    user: user,
-                    movie: movie,
-                    updateUserOnFav: updateUserOnFav
-                }, void 0, false, {
-                    fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 42,
-=======
                     movie: movie
                 }, void 0, false, {
                     fileName: "src/components/movie-view/movie-view.jsx",
                     lineNumber: 43,
->>>>>>> Finalize-Project
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/movie-view/movie-view.jsx",
-<<<<<<< HEAD
-                lineNumber: 41,
-=======
                 lineNumber: 42,
->>>>>>> Finalize-Project
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27746,42 +27663,25 @@ const MovieView = ()=>{
                         children: "Back"
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-<<<<<<< HEAD
-                        lineNumber: 51,
-=======
                         lineNumber: 50,
->>>>>>> Finalize-Project
                         columnNumber: 11
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/components/movie-view/movie-view.jsx",
-<<<<<<< HEAD
-                    lineNumber: 50,
-=======
                     lineNumber: 49,
->>>>>>> Finalize-Project
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/movie-view/movie-view.jsx",
-<<<<<<< HEAD
-                lineNumber: 49,
-=======
                 lineNumber: 48,
->>>>>>> Finalize-Project
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true);
 };
-<<<<<<< HEAD
-_s(MovieView, "e2L2DPdRH1AShA7yIOCsYRlzvlI=", false, function() {
-    return [
-=======
 _s(MovieView, "Jm0JIx7LF+r09JF7arWHfMAlUFU=", false, function() {
     return [
         (0, _reactRedux.useSelector),
->>>>>>> Finalize-Project
         (0, _reactRouter.useParams)
     ];
 });
@@ -27794,11 +27694,7 @@ $RefreshReg$(_c, "MovieView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-<<<<<<< HEAD
-},{"react/jsx-dev-runtime":"iTorj","react-router":"dbWyW","react-router-dom":"9xmpe","react-bootstrap":"3AD9A","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./movie-view.scss":"jnlR5","../fav-button/fav-button":"id2ea"}],"dbWyW":[function(require,module,exports) {
-=======
 },{"react/jsx-dev-runtime":"iTorj","react-router":"dbWyW","react-router-dom":"9xmpe","react-bootstrap":"3AD9A","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./movie-view.scss":"jnlR5","../fav-button/fav-button":"id2ea","react-redux":"bdVon"}],"dbWyW":[function(require,module,exports) {
->>>>>>> Finalize-Project
 /**
  * React Router v6.8.1
  *
@@ -46459,9 +46355,6 @@ $RefreshReg$(_c, "FavButton");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-<<<<<<< HEAD
-},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","react":"21dqq","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./fav-button.scss":"gK9mO"}],"gK9mO":[function() {},{}],"9YtA0":[function(require,module,exports) {
-=======
 },{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","react":"21dqq","react-bootstrap":"3AD9A","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./fav-button.scss":"gK9mO","react-redux":"bdVon","../../redux/reducers/user":"e6tdF"}],"gK9mO":[function() {},{}],"bdVon":[function(require,module,exports) {
 // The primary entry point assumes we're working with standard ReactDOM/RN, but
 // older versions that do not include `useSyncExternalStore` (React 16.9 - 17.x).
@@ -51890,7 +51783,6 @@ thunk.withExtraArgument = createThunkMiddleware;
 exports.default = thunk;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9YtA0":[function(require,module,exports) {
->>>>>>> Finalize-Project
 var $parcel$ReactRefreshHelpers$9fee = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -52386,7 +52278,7 @@ $RefreshReg$(_c, "NavigationBar");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-bootstrap":"3AD9A","react-redux":"bdVon","../../redux/reducers/user":"e6tdF","../../redux/reducers/token":"4eTad","../movies-filter/movies-filter":"kxBRK","react-bootstrap/Row":"cMC39","react-bootstrap/Col":"2L2I6"}],"kxBRK":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-bootstrap":"3AD9A","react-redux":"bdVon","../../redux/reducers/user":"e6tdF","../../redux/reducers/token":"4eTad","../movies-filter/movies-filter":"kxBRK","react-bootstrap/Col":"2L2I6","react-bootstrap/Row":"cMC39"}],"kxBRK":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$adcf = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -52951,11 +52843,7 @@ $RefreshReg$(_c, "UserFavorites");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-<<<<<<< HEAD
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","../movie-card/movie-card":"bwuIu","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bwuIu":[function(require,module,exports) {
-=======
 },{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","../movie-card/movie-card":"bwuIu","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-redux":"bdVon"}],"bwuIu":[function(require,module,exports) {
->>>>>>> Finalize-Project
 var $parcel$ReactRefreshHelpers$67b2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -52974,11 +52862,7 @@ var _favButton = require("../fav-button/fav-button");
 var _reactBootstrap = require("react-bootstrap");
 var _reactRouterDom = require("react-router-dom");
 var _movieCardScss = require("./movie-card.scss");
-<<<<<<< HEAD
-const MovieCard = ({ movie , user , updateUserOnFav  })=>{
-=======
 const MovieCard = ({ movie  })=>{
->>>>>>> Finalize-Project
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card), {
         className: "h-100",
         children: [
@@ -52991,29 +52875,17 @@ const MovieCard = ({ movie  })=>{
                         src: movie.image
                     }, void 0, false, {
                         fileName: "src/components/movie-card/movie-card.jsx",
-<<<<<<< HEAD
-                        lineNumber: 16,
-=======
                         lineNumber: 15,
->>>>>>> Finalize-Project
                         columnNumber: 11
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/components/movie-card/movie-card.jsx",
-<<<<<<< HEAD
-                    lineNumber: 15,
-=======
                     lineNumber: 14,
->>>>>>> Finalize-Project
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/movie-card/movie-card.jsx",
-<<<<<<< HEAD
-                lineNumber: 14,
-=======
                 lineNumber: 13,
->>>>>>> Finalize-Project
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Card).Body, {
@@ -53041,13 +52913,7 @@ const MovieCard = ({ movie  })=>{
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Col), {
                                 className: "text-start",
                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _favButton.FavButton), {
-<<<<<<< HEAD
-                                    user: user,
-                                    movie: movie,
-                                    updateUserOnFav: updateUserOnFav
-=======
                                     movie: movie
->>>>>>> Finalize-Project
                                 }, void 0, false, {
                                     fileName: "src/components/movie-card/movie-card.jsx",
                                     lineNumber: 24,
@@ -53069,29 +52935,17 @@ const MovieCard = ({ movie  })=>{
                                         children: "Details"
                                     }, void 0, false, {
                                         fileName: "src/components/movie-card/movie-card.jsx",
-<<<<<<< HEAD
-                                        lineNumber: 32,
-=======
                                         lineNumber: 28,
->>>>>>> Finalize-Project
                                         columnNumber: 15
                                     }, undefined)
                                 }, void 0, false, {
                                     fileName: "src/components/movie-card/movie-card.jsx",
-<<<<<<< HEAD
-                                    lineNumber: 31,
-=======
                                     lineNumber: 27,
->>>>>>> Finalize-Project
                                     columnNumber: 13
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/components/movie-card/movie-card.jsx",
-<<<<<<< HEAD
-                                lineNumber: 30,
-=======
                                 lineNumber: 26,
->>>>>>> Finalize-Project
                                 columnNumber: 11
                             }, undefined)
                         ]
@@ -53109,11 +52963,7 @@ const MovieCard = ({ movie  })=>{
         ]
     }, void 0, true, {
         fileName: "src/components/movie-card/movie-card.jsx",
-<<<<<<< HEAD
-        lineNumber: 13,
-=======
         lineNumber: 12,
->>>>>>> Finalize-Project
         columnNumber: 5
     }, undefined);
 };
@@ -53307,6 +53157,6 @@ const store = (0, _toolkit.configureStore)({
     }
 });
 
-},{"@reduxjs/toolkit":"lL1Ef","./reducers/movies":"l0qwl","./reducers/user":"e6tdF","./reducers/token":"4eTad","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["1xC6H","7a1Sg","d8Dch"], "d8Dch", "parcelRequire94c2")
+},{"@reduxjs/toolkit":"lL1Ef","./reducers/movies":"l0qwl","./reducers/user":"e6tdF","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./reducers/token":"4eTad"}]},["1xC6H","7a1Sg","d8Dch"], "d8Dch", "parcelRequire94c2")
 
 //# sourceMappingURL=index.b4b6dfad.js.map
